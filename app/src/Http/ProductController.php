@@ -111,7 +111,7 @@ class ProductController extends ApiBaseController
 //            echo json_encode(['message' => 'You have no authority for this']);
 //            exit();
 //        }
-        $this->db->prepare("INSERT INTO products (name, flavour, description, price, stock, category_id, is_cake, image_product) VALUES (?,?,?,?,?,?,?,?)")
+        $this->db->prepare("INSERT INTO products (name, flavour, description, price, stock, category_id, is_cake) VALUES (?,?,?,?,?,?,?)")
             ->executeStatement([
                 $this->httpBody['name'],
                 $this->httpBody['flavour'],
@@ -119,8 +119,7 @@ class ProductController extends ApiBaseController
                 $this->httpBody['price'],
                 $this->httpBody['stock'],
                 $this->httpBody['category_id'],
-                $this->httpBody['is_cake'],
-                $this->httpBody['image_product']
+                $this->httpBody['is_cake']
             ]);
         if (isset($this->httpBody['tags'])) {
             $productId = $this->db->lastInsertId();
