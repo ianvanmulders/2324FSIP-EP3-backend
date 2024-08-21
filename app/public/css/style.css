@@ -1,0 +1,164 @@
+body {
+    font-family: Muli, Helvetica, sans-serif;
+    margin: 0px;
+    background-color: #f6f8fa;
+}
+
+.wrapper {
+    width: 600px;
+    height: 100vh;
+    background-color: #ffffff;
+    margin: 0 auto;
+}
+
+.wrapper .todo-header h1 {
+    margin: 0px;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+.wrapper .todos-container .todo, .wrapper .todos-container .add-todo  {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.wrapper .todos-container .todo span  {
+    float: right;
+}
+
+.wrapper .todos-container .todo span .del-todo  {
+    margin-left: 10px;
+    vertical-align: -0.05rem;
+}
+
+.wrapper .todos-container .todo span .edit-todo, .wrapper .todos-container .todo span .del-todo  {
+    color: #333;
+}
+
+.wrapper .todos-container .todo span .edit-todo:hover  {
+    color: #999;
+}
+
+.wrapper .todos-container .todo span .del-todo:hover  {
+    color: #9E1A1A;
+}
+
+.wrapper .todos-container .todo p  {
+    margin: 0px;
+    display: inline-block;
+}
+
+.wrapper .todos-container .add-todo a {
+    text-decoration: none;
+    color: #333;
+}
+
+.wrapper .todos-container .add-todo a:hover {
+    color: #007F00;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 10px 20px 20px 20px;
+    border: 1px solid #888;
+    width: 560px; /* Could be more or less, depending on screen size */
+}
+
+.modal-content p {
+    margin: 10px 0;
+}
+
+.modal-content .modal-input {
+    width: 500px;
+    padding: 2px;
+    border-width: 1px;
+    height: 24px;
+    font-size: 16px;
+    outline: none;
+}
+
+.modal-content .modal-select {
+    width: 506px;
+    height: 30px;
+    font-size: 16px;
+    margin-top: 10px;
+    padding: 0;
+}
+
+.modal-content .buttons {
+    margin-top: 10px;
+}
+
+.modal-content .buttons .button-cancel, .modal-content .buttons .button-save,  .modal-content .buttons .button-add {
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.modal-content .buttons .button-cancel {
+    background-color: #9E1A1A;
+}
+
+.modal-content .buttons .button-cancel:hover {
+    background-color: #B83434;
+}
+
+.modal-content .buttons .button-save, .modal-content .buttons .button-add {
+    background-color: #4CAF50;
+}
+
+.modal-content .buttons .button-save:hover, .modal-content .buttons .button-add:hover {
+    background-color: #339637;
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.item {
+    padding-left: 25px;
+}
+
+.high {
+    background: transparent url(../img/prio-high.png) no-repeat 0% 50%;
+}
+
+.normal {
+    background: transparent url(../img/prio-normal.png) no-repeat 0% 50%;
+}
+
+.low {
+    background: transparent url(../img/prio-low.png) no-repeat 0% 50%;
+}

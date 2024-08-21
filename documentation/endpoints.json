@@ -1,0 +1,593 @@
+{
+  "openapi": "3.1.0",
+  "x-stoplight": {
+    "id": "56qia9ie3z3fl"
+  },
+  "info": {
+    "title": "gelatoGallery",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8081"
+    }
+  ],
+  "paths": {
+    "/home": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-home",
+        "x-stoplight": {
+          "id": "xwcst0ui7hioj"
+        },
+        "description": "homepage"
+      }
+    },
+    "/products": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {}
+          }
+        },
+        "operationId": "get-products",
+        "x-stoplight": {
+          "id": "fi3c0zyeu22al"
+        },
+        "description": "get all products"
+      },
+      "parameters": []
+    },
+    "/products?isCake=0": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "operationId": "get-products-icecreams",
+        "x-stoplight": {
+          "id": "5ml0eizbar23f"
+        },
+        "description": "get all icecreams",
+        "parameters": []
+      },
+      "parameters": []
+    },
+    "/products?isCake=1": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "operationId": "get-products-icecakes",
+        "x-stoplight": {
+          "id": "pgt362am9ooj8"
+        },
+        "description": "get all icecakes"
+      },
+      "parameters": []
+    },
+    "/products/{productId}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "integer"
+          },
+          "name": "productId",
+          "in": "path",
+          "required": true
+        }
+      ],
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "operationId": "get-products-icecakes-productId",
+        "x-stoplight": {
+          "id": "94hr534vjqb8y"
+        },
+        "description": "get a product by id"
+      },
+      "put": {
+        "summary": "",
+        "operationId": "put-products-icecakes-productId",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "x-stoplight": {
+          "id": "igrzgtd2ja33r"
+        },
+        "description": "edit a product by id",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/product"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "",
+        "operationId": "delete-products-icecakes-productId",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "x-stoplight": {
+          "id": "h9fttept8avb3"
+        },
+        "description": "delete a product by id"
+      }
+    },
+    "/products/add": {
+      "get": {
+        "description": "",
+        "x-stoplight": {
+          "id": "z4dgjhxz7dg8b"
+        }
+      },
+      "parameters": [],
+      "post": {
+        "summary": "",
+        "operationId": "post-products-icecakes-add",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "x-stoplight": {
+          "id": "ghpl818l2yel9"
+        },
+        "description": "add a new icecake",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/product"
+              },
+              "examples": {}
+            }
+          },
+          "description": ""
+        },
+        "parameters": []
+      }
+    },
+    "/about": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-about",
+        "x-stoplight": {
+          "id": "302xi4girudgg"
+        },
+        "description": "get information about Gelato Gallery (who? what? where? ...)"
+      }
+    },
+    "/contact": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-contact",
+        "x-stoplight": {
+          "id": "pt0h96u1kvsv8"
+        },
+        "description": "get in contact with the store"
+      }
+    },
+    "/contact/icecreams": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-contact-icecreams",
+        "x-stoplight": {
+          "id": "mtynsk5wst0s1"
+        },
+        "description": "get form for ordering icecream"
+      },
+      "post": {
+        "summary": "",
+        "operationId": "post-contact-icecreams",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "x-stoplight": {
+          "id": "8m7880asawbki"
+        },
+        "description": "order icecream",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Order"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/contact/icecakes": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-contact-icecakes",
+        "x-stoplight": {
+          "id": "qds6sexmo9mik"
+        }
+      },
+      "post": {
+        "summary": "",
+        "operationId": "post-contact-icecakes",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "x-stoplight": {
+          "id": "yk0eronlr5lk3"
+        },
+        "description": "order icecake",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Order"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/contact/icetrucks": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-contact-icetrucks",
+        "x-stoplight": {
+          "id": "km4hx5dwtxnwb"
+        }
+      },
+      "post": {
+        "summary": "",
+        "operationId": "post-contact-icetrucks",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "x-stoplight": {
+          "id": "dss8txxo5co3m"
+        },
+        "description": "order an icetruck",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Order"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/dashboard": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-dashboard",
+        "x-stoplight": {
+          "id": "uy7ggksnhsvvj"
+        },
+        "description": "get dashboard"
+      }
+    },
+    "/calendar": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-dashboard-calendar",
+        "x-stoplight": {
+          "id": "seb7argd4da2b"
+        },
+        "description": "get calendar"
+      },
+      "post": {
+        "summary": "",
+        "operationId": "post-dashboard-calendar",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "x-stoplight": {
+          "id": "i2mfrbaxda8iz"
+        },
+        "description": "add event to calendar",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Event"
+              }
+            }
+          }
+        }
+      },
+      "parameters": []
+    },
+    "/popups": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-dashboard-popup",
+        "x-stoplight": {
+          "id": "bsduzljir03pt"
+        },
+        "description": "get popup form"
+      },
+      "parameters": [],
+      "post": {
+        "summary": "",
+        "operationId": "post-dashboard-popups",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "x-stoplight": {
+          "id": "msd36r6qrzwlo"
+        },
+        "description": "add popup",
+        "security": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Popup"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/calendar/event": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-dashboard-calendar-event",
+        "x-stoplight": {
+          "id": "n1h9gulsijfec"
+        }
+      },
+      "parameters": []
+    }
+  },
+  "components": {
+    "schemas": {
+      "Event": {
+        "title": "Event",
+        "type": "object",
+        "x-stoplight": {
+          "id": "yufq9md4u1vvm"
+        },
+        "properties": {
+          "name": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "crakk6ojvoa5a"
+            }
+          },
+          "date": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "xmb2ur4o6pcd5"
+            },
+            "format": "date"
+          },
+          "url": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "exn9gnubsplaw"
+            }
+          },
+          "is_closed": {
+            "type": "boolean",
+            "x-stoplight": {
+              "id": "lg93cb85748xp"
+            }
+          }
+        },
+        "required": [
+          "name",
+          "date",
+          "is_closed"
+        ]
+      },
+      "product": {
+        "title": "product",
+        "x-stoplight": {
+          "id": "hwvek7v8k51e8"
+        },
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "rtc38yc5tbejw"
+            }
+          },
+          "flavour": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "xv65adbofocvh"
+            }
+          },
+          "description": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "2cso9yatin3ba"
+            }
+          },
+          "price": {
+            "type": "number",
+            "x-stoplight": {
+              "id": "49mfta7wwf6s9"
+            },
+            "format": "double",
+            "default": 0
+          },
+          "stock": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "htetd7ktyr87s"
+            }
+          },
+          "category_id": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "1sqmeovkkl3an"
+            }
+          },
+          "is_cake": {
+            "type": "boolean",
+            "x-stoplight": {
+              "id": "fsz34jg4pjgq2"
+            },
+            "default": false
+          }
+        },
+        "required": [
+          "name",
+          "flavour",
+          "price",
+          "stock",
+          "is_cake"
+        ]
+      },
+      "Order": {
+        "title": "Order",
+        "x-stoplight": {
+          "id": "fzx54hssuwn8w"
+        },
+        "type": "object",
+        "properties": {
+          "order_date": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "4y21aoj0shjb9"
+            }
+          },
+          "pickup_date": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "yyamv43fmkk1p"
+            }
+          },
+          "note": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "w43fy8ve2j3wx"
+            }
+          },
+          "name_client": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "ppls8bigo6wra"
+            }
+          },
+          "email_client": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "vcwrdggkglfgp"
+            }
+          },
+          "quantity": {
+            "type": "number",
+            "x-stoplight": {
+              "id": "8jq0bx2jr0d97"
+            },
+            "format": "double",
+            "default": 1
+          },
+          "productId": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "nla916qc822yd"
+            }
+          }
+        },
+        "required": [
+          "order_date",
+          "pickup_date",
+          "name_client",
+          "email_client",
+          "quantity"
+        ]
+      },
+      "Popup": {
+        "title": "Popup",
+        "x-stoplight": {
+          "id": "fyzom50gl89do"
+        },
+        "type": "object",
+        "properties": {
+          "start_date": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "d76y624ybf36q"
+            },
+            "format": "date-time"
+          },
+          "end_date": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "d0hynark1wmj7"
+            },
+            "format": "date-time"
+          },
+          "frequency_in_days": {
+            "type": "integer",
+            "x-stoplight": {
+              "id": "121wm5wq3uoi4"
+            },
+            "default": 0
+          }
+        }
+      }
+    }
+  }
+}

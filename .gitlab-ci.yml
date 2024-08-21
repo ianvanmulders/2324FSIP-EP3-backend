@@ -1,0 +1,20 @@
+stages:
+- deploy
+build and deploy:
+    image: composer:latest
+    stage: deploy
+    script:
+    # feel free to add shell commands here to execute in the runner
+    - cd app
+    - composer install
+    # scp command to copy the dist folder to the webserver
+    - scp -o StrictHostKeyChecking=no -r * $SSH_USERNAME@cloudplesk.ikdoeict.be:apiGelato.dietersenesael.ikdoeict.be/
+    before_script:
+    ## this script copies the ssh key to the Gitlab Runner
+    ## documentation: https://docs.gitlab.com/ee/ci/ssh_keys/
+    - 'command -v ssh-agent >/dev/null || ( apt-get update -y && apt-get install openssh-client -y )'
+    - eval $(ssh-agent -s)
+    - chmod 400 "$SSH_PRIVATE_KEY"
+    - ssh-add "$SSH_PRIVATE_KEY"
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh

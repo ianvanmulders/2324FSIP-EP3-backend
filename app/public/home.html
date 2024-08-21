@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Todo list app</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+          integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+          crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,600" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <section class="todo-header">
+            <h1>TODOLIST</h1>
+        </section>
+        <section class="todos-container">
+            <div class="todo">
+                <p class="item high">Washing my car</p>
+                <span>
+                    <a href="#" class="edit-todo"><i class="fas fa-pen"></i></a>
+                    <a href="#" class="del-todo"><i class="fas fa-times fa-lg"></i></a>
+                </span>
+            </div>
+            <div class="add-todo">
+                <a href="#"><i class="fas fa-plus-circle"></i> Add todo</a>
+            </div>
+        </section>
+    </div>
+
+    <div id="addTodoModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Add a todo</p>
+            <form>
+                <input class="modal-input" type="text"/>
+                <select class="modal-select">
+                    <option value="low" selected="selected">low</option>
+                    <option value="normal">normal</option>
+                    <option value="high">high</option>
+                </select>
+            </form>
+            <div class="buttons">
+                <a class="button-cancel" href="#">Cancel</a>
+                <a class="button-add" href="#">Add</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="editTodoModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Change todo</p>
+            <form>
+                <input class="modal-input" type="text"/>
+                <select class="modal-select">
+                    <option value="low" selected="selected">low</option>
+                    <option value="normal">normal</option>
+                    <option value="high">high</option>
+                </select>
+            </form>
+            <div class="buttons">
+                <a class="button-cancel" href="#">Cancel</a>
+                <a class="button-save" href="#">Save</a>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/script.js"></script>
+</body>
+</html>
